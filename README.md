@@ -1,65 +1,39 @@
-# Headcount-AI
-HeadcountAI is a real-time people counting system using computer vision and a pre-trained MobileNetSSD model. It detects and tracks individuals, providing accurate entry and exit counts with real-time performance metrics. Features include lighting adjustment, pausing, and resetting counts. Ideal for surveillance and analytics.
+# Headcount AI
+
+Headcount AI is a computer vision project using OpenCV and deep learning to count people in a video stream. It employs a MobileNet SSD model for real-time object detection and a centroid tracking algorithm for counting and tracking individuals.
 
 ## Features
 
-- Real-time people detection and tracking
-- Entry and exit counting
-- Lighting adjustment for better detection accuracy
-- Pausing and resuming the count
-- Resetting the count data
+- **Real-time Object Detection**: Utilizes MobileNet SSD for detecting persons in video frames.
+- **Centroid Tracking**: Tracks detected persons across frames using a centroid tracker.
+- **Entry/Exit Counting**: Automatically counts people entering and exiting a defined area.
+- **Performance Metrics**: Displays FPS, entry count, exit count, and current headcount.
+- **Data Reset**: Option to reset counts and tracking state via a key press (`r` key).
 
 ## Requirements
 
-- Python 3.6+
+- Python 3.x
 - OpenCV
+- NumPy
 - imutils
-- numpy
-- A webcam or video file for input
-
-## Installation
-
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/yourusername/HeadcountAI.git
-    cd HeadcountAI
-    ```
-
-2. Set up a virtual environment:
-    ```bash
-    python -m venv venv
-    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-    ```
-
-3. Install the required packages:
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-4. Download the MobileNetSSD model files and place them in the project directory:
-    - `MobileNetSSD_deploy.prototxt`
-    - `MobileNetSSD_deploy.caffemodel`
+- Caffe model files (`MobileNetSSD_deploy.prototxt` and `MobileNetSSD_deploy.caffemodel`)
 
 ## Usage
 
-1. Run the main script:
-    ```bash
-    python main.py
-    ```
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Vatsalbirla317/headcount-ai.git
+   ```
 
-2. Use the following keys for control:
-    - `q`: Quit the application
-    - `w`: Pause/Resume the counting
-    - `r`: Reset the count data
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-## File Structure
+3. Run the application:
+   ```bash
+   python main.py
+   ```
 
-```
-HeadcountAI/
-├── centroidtracker.py
-├── main.py
-├── MobileNetSSD_deploy.prototxt
-├── MobileNetSSD_deploy.caffemodel
-├── requirements.txt
-└── README.md
-```
+4. Use `q` to quit, `w` to pause/unpause the video, and `r` to reset the data.
+
